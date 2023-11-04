@@ -1,22 +1,34 @@
-import { StatusBar } from "expo-status-bar";
-import { Text, View, Button, TouchableOpacity } from "react-native";
+// In App.js in a new project
+
+import * as React from "react";
+import { View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./screens/LoginScreen";
-import { styles } from "./styles";
+import SignUpScreen from "./screens/SignUpScreen";
 
-export default function App() {
+function HomeScreen() {
   return (
-    <View style={styles.landingPage}>
-      <View>
-        <Text style={styles.title}>Baddour Car Rental</Text>
-      </View>
-
-      <View>
-        <Text style={styles.version}>Demo Version 0.1</Text>
-      </View>
-
-      <View style={styles.loginButton}>
-        <Button title="Login" onPress={() => console.log("Button Pressed")} />
-      </View>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Home Screen</Text>
     </View>
   );
 }
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRoutName="Login"
+        screenOptions={{ headerShown: false }} //removes the top header from showing
+      >
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Sign up" component={SignUpScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
