@@ -13,3 +13,5 @@ export default function AppNavigation() {
     </NavigationContainer>
   );
 }
+
+//Accidentally used App.js instead

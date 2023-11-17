@@ -3,8 +3,11 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { TextInput } from "react-native";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
+
   return (
     <View className="bg-white h-full w-full">
       <StatusBar style="light" />
@@ -31,6 +34,7 @@ export default function LoginScreen() {
           <Text className="text-black  font-bold tracking-wider text-5xl">
             HomeSalePlus
           </Text>
+          <Text>Demo 0.001</Text>
         </View>
         {/*Form*/}
         <View className="flex items-center mx-4 space-y-4">
@@ -46,7 +50,7 @@ export default function LoginScreen() {
           </View>
 
           <View className="w-full">
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.push("BrowseScreen")}>
               <View className="w-full bg-sky-400 p-3 rounded-2xl mb-3">
                 <Text className="text-xl font-bold text-white text-center">
                   Login
@@ -56,8 +60,8 @@ export default function LoginScreen() {
           </View>
 
           <View className="flex-row justify-center">
-            <Text>Don't have an account?</Text>
-            <TouchableOpacity>
+            <Text>Don't have an account? </Text>
+            <TouchableOpacity onPress={() => navigation.push("SignUp")}>
               <Text className="text-sky-600">SignUp</Text>
             </TouchableOpacity>
           </View>

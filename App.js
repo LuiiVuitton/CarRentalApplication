@@ -1,4 +1,4 @@
-// In App.js in a new project
+// App Navigation
 
 import * as React from "react";
 import { View, Text } from "react-native";
@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./screens/LoginScreen";
 import SignUpScreen from "./screens/SignUpScreen";
+import BrowseScreen from "./screens/BrowseScreen";
 
 function HomeScreen() {
   return (
@@ -25,7 +26,8 @@ function App() {
         screenOptions={{ headerShown: false }} //removes the top header from showing
       >
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Sign up" component={SignUpScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="BrowseScreen" component={BrowseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
