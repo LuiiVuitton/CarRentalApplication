@@ -32,9 +32,9 @@ export default function LoginScreen() {
         {/*Title*/}
         <View className="flex items-center">
           <Text className="text-black  font-bold tracking-wider text-5xl">
-            Welcome!
+            HomeSale.Plus
           </Text>
-          <Text>Demo 0.001</Text>
+          <Text>AppDemo 0.001</Text>
         </View>
         {/*Form*/}
         <View className="flex items-center mx-4 space-y-4">
@@ -50,7 +50,7 @@ export default function LoginScreen() {
           </View>
 
           <View className="w-full">
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.push("home")}>
               <View className="w-full bg-sky-400 p-3 rounded-2xl mb-3">
                 <Text className="text-xl font-bold text-white text-center">
                   Login

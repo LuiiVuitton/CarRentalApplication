@@ -1,14 +1,17 @@
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { createStackNavigator } from "@react-navigation/stack";
 
 // Import your screens
 import LoginScreen from "./screens/LoginScreen";
 import MessageScreen from "./screens/MessageScreen";
 import HomeScreen from "./screens/HomeScreen";
 import SignUpScreen from "./screens/SignUpScreen";
+import BrowseScreen from "./screens/BrowseScreen";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const loginName = "Account";
 const MessageName = "Messages";
@@ -40,7 +43,7 @@ function App() {
         })}
       >
         <Tab.Screen name={HomeName} component={HomeScreen} />
-        <Tab.Screen name={SearchName} component={SignUpScreen} />
+        <Tab.Screen name={SearchName} component={BrowseScreen} />
         <Tab.Screen name={MessageName} component={MessageScreen} />
         <Tab.Screen name={loginName} component={LoginScreen} />
 
