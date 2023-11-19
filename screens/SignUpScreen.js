@@ -41,7 +41,7 @@ export default function SignUpScreen() {
           <View className="bg-black/5 p-5 rounded-2xl w-full">
             <TextInput placeholder="Username" placeholderTextColor={"gray"} />
           </View>
-          <View className="bg-black/5 p-5 rounded-2xl w-full mb-3">
+          <View className="bg-black/5 p-5 rounded-2xl w-full">
             <TextInput
               placeholder="Password"
               placeholderTextColor={"gray"}

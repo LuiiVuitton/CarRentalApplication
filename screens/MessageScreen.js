@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 
-export default function BrowseScreen() {
+export default function MessageScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text
@@ -9,7 +9,7 @@ export default function BrowseScreen() {
         style={{ fontSize: 26, fontWeight: "bold" }}
       >
         {" "}
-        Browse Screen working...
+        coming soon...
       </Text>
     </View>
   );

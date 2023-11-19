@@ -1,34 +1,51 @@
-// App Navigation
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
 
-import * as React from "react";
-import { View, Text } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// Import your screens
 import LoginScreen from "./screens/LoginScreen";
+import MessageScreen from "./screens/MessageScreen";
+import HomeScreen from "./screens/HomeScreen";
 import SignUpScreen from "./screens/SignUpScreen";
-import BrowseScreen from "./screens/BrowseScreen";
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+const Tab = createBottomTabNavigator();
 
-const Stack = createNativeStackNavigator();
+const loginName = "Account";
+const MessageName = "Messages";
+const HomeName = "Home";
+const SearchName = "Search";
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRoutName="Login"
-        screenOptions={{ headerShown: false }} //removes the top header from showing
+      <Tab.Navigator
+        initialRouteName={loginName}
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            const routeName = route.name;
+
+            if (routeName === MessageName) {
+              iconName = focused ? "chatbox" : "chatbox-outline";
+            } else if (routeName === loginName) {
+              iconName = focused ? "person" : "person-outline";
+            } else if (routeName === HomeName) {
+              iconName = focused ? "home" : "home-outline";
+            } else if (routeName === SearchName) {
+              iconName = focused ? "search" : "search-outline";
+            }
+
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
       >
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        <Stack.Screen name="BrowseScreen" component={BrowseScreen} />
-      </Stack.Navigator>
+        <Tab.Screen name={HomeName} component={HomeScreen} />
+        <Tab.Screen name={SearchName} component={SignUpScreen} />
+        <Tab.Screen name={MessageName} component={MessageScreen} />
+        <Tab.Screen name={loginName} component={LoginScreen} />
+
+        {/* Add other screens as needed */}
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
