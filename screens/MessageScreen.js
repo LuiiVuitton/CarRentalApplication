@@ -40,8 +40,8 @@ const Messages = [
   // Add more users as needed
   {
     id: "6",
-    userName: "Mike Johnson",
-    userImg: require("../assets/Profile6.jpg"),
+    userName: "Lisa Willson",
+    userImg: require("../assets/Profile8.jpg"),
     messageTime: "3 Days ago",
     messageText: "Thanks for the Help!",
   },

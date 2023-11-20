@@ -64,7 +64,7 @@ export default function BrowseScreen() {
         p: "testing",
         img: require("../assets/HouseThree.jpg"),
       },
-      { title: "$340,000", img: require("../assets/HouseFour.jpg") },
+      { title: "$490,000", img: require("../assets/HouseFour.jpg") },
     ];
     return (
       <View style={styles.optionListContainer}>
@@ -87,7 +87,7 @@ export default function BrowseScreen() {
   const ListOption3 = () => {
     const optionList = [
       {
-        title: "$550,000",
+        title: "$650,000",
         p: "testing",
         img: require("../assets/HomeFive.jpg"),
       },
@@ -122,7 +122,7 @@ export default function BrowseScreen() {
         </View>
 
         <Image
-          source={require("../assets/C2A_LOGO.png")}
+          source={require("../assets/Profile6.jpg")}
           style={styles.profileImage}
         />
       </View>

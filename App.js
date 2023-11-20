@@ -9,11 +9,12 @@ import MessageScreen from "./screens/MessageScreen";
 import HomeScreen from "./screens/HomeScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 import BrowseScreen from "./screens/BrowseScreen";
+import AccountScreen from "./screens/AccountScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const loginName = "Account";
+const loginName = "Profile";
 const MessageName = "Messages";
 const HomeName = "Home";
 const SearchName = "Search";
@@ -45,7 +46,7 @@ function App() {
         <Tab.Screen name={HomeName} component={HomeScreen} />
         <Tab.Screen name={SearchName} component={BrowseScreen} />
         <Tab.Screen name={MessageName} component={MessageScreen} />
-        <Tab.Screen name={loginName} component={LoginScreen} />
+        <Tab.Screen name={loginName} component={AccountScreen} />
 
         {/* Add other screens as needed */}
       </Tab.Navigator>
